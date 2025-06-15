@@ -1,3 +1,5 @@
+Olá! Perfeito, agora sim! Aqui está o seu código com os comentários pontuais em cada seção,
+explicando o que cada parte faz. ```vue
 <template>
   <v-app-bar app color="primary" dark>
     <v-btn icon @click="$router.go(-1)" title="Voltar">
@@ -15,9 +17,16 @@
       <v-row justify="center">
         <v-col cols="12" md="10" lg="8">
           <v-card class="elevation-6 rounded-lg pa-6 mb-8">
-            <v-card-title class="text-h4 mb-4 text-primary font-weight-bold d-flex justify-space-between align-center">
+            <v-card-title
+              class="text-h4 mb-4 text-primary font-weight-bold d-flex justify-space-between align-center"
+            >
               <span>{{ disciplina.nome }}</span>
-              <v-btn icon color="secondary" @click="openEditDialog(disciplina)" title="Editar Disciplina">
+              <v-btn
+                icon
+                color="secondary"
+                @click="openEditDialog(disciplina)"
+                title="Editar Disciplina"
+              >
                 <v-icon>mdi-pencil</v-icon>
               </v-btn>
             </v-card-title>
@@ -57,14 +66,30 @@
                     <v-icon color="success">mdi-check-circle</v-icon>
                   </template>
                   <v-list-item-content>
-                    <v-list-item-title class="font-weight-medium">{{ avaliacao.nome }}</v-list-item-title>
-                    <v-list-item-subtitle>Nota: {{ avaliacao.nota }} | Peso: {{ avaliacao.peso }}</v-list-item-subtitle>
+                    <v-list-item-title class="font-weight-medium">{{
+                      avaliacao.nome
+                    }}</v-list-item-title>
+                    <v-list-item-subtitle
+                      >Nota: {{ avaliacao.nota }} | Peso: {{ avaliacao.peso }}</v-list-item-subtitle
+                    >
                   </v-list-item-content>
                   <template v-slot:append>
-                    <v-btn icon variant="text" color="grey" @click.stop="openEditAvaliacaoDialog(avaliacao)" title="Editar">
+                    <v-btn
+                      icon
+                      variant="text"
+                      color="grey"
+                      @click.stop="openEditAvaliacaoDialog(avaliacao)"
+                      title="Editar"
+                    >
                       <v-icon>mdi-pencil</v-icon>
                     </v-btn>
-                    <v-btn icon variant="text" color="red" @click.stop="confirmDeleteAvaliacao(avaliacao)" title="Excluir">
+                    <v-btn
+                      icon
+                      variant="text"
+                      color="red"
+                      @click.stop="confirmDeleteAvaliacao(avaliacao)"
+                      title="Excluir"
+                    >
                       <v-icon>mdi-delete</v-icon>
                     </v-btn>
                   </template>
@@ -94,14 +119,28 @@
                     <v-icon color="warning">mdi-alert-octagon</v-icon>
                   </template>
                   <v-list-item-content>
-                    <v-list-item-title class="font-weight-medium">Data: {{ falta.data }}</v-list-item-title>
+                    <v-list-item-title class="font-weight-medium"
+                      >Data: {{ falta.data }}</v-list-item-title
+                    >
                     <v-list-item-subtitle>Quantidade: {{ falta.quantidade }}</v-list-item-subtitle>
                   </v-list-item-content>
                   <template v-slot:append>
-                    <v-btn icon variant="text" color="grey" @click.stop="openEditFaltaDialog(falta)" title="Editar">
+                    <v-btn
+                      icon
+                      variant="text"
+                      color="grey"
+                      @click.stop="openEditFaltaDialog(falta)"
+                      title="Editar"
+                    >
                       <v-icon>mdi-pencil</v-icon>
                     </v-btn>
-                    <v-btn icon variant="text" color="red" @click.stop="confirmDeleteFalta(falta)" title="Excluir">
+                    <v-btn
+                      icon
+                      variant="text"
+                      color="red"
+                      @click.stop="confirmDeleteFalta(falta)"
+                      title="Excluir"
+                    >
                       <v-icon>mdi-delete</v-icon>
                     </v-btn>
                   </template>
@@ -120,7 +159,9 @@
                 <v-col cols="12" sm="4" class="text-center">
                   <v-card class="pa-3" variant="outlined">
                     <div class="text-caption">Média Final:</div>
-                    <div :class="`text-h4 font-weight-bold mt-2 text-${mediaColor}`">{{ mediaFinal }}</div>
+                    <div :class="`text-h4 font-weight-bold mt-2 text-${mediaColor}`">
+                      {{ mediaFinal }}
+                    </div>
                   </v-card>
                 </v-col>
                 <v-col cols="12" sm="4" class="text-center">
@@ -133,7 +174,9 @@
                 <v-col cols="12" sm="4" class="text-center">
                   <v-card class="pa-3" variant="outlined">
                     <div class="text-caption">Status:</div>
-                    <div :class="`text-h4 font-weight-bold mt-2 text-${statusColor}`">{{ statusAprovacao }}</div>
+                    <div :class="`text-h4 font-weight-bold mt-2 text-${statusColor}`">
+                      {{ statusAprovacao }}
+                    </div>
                   </v-card>
                 </v-col>
               </v-row>
@@ -201,8 +244,19 @@
             </v-form>
           </v-card-text>
           <v-card-actions class="justify-end pa-4 bg-blue-grey-lighten-5">
-            <v-btn color="grey" variant="text" @click="dialogDisciplina = false" :disabled="disciplinasStore.loading">Cancelar</v-btn>
-            <v-btn color="primary" @click="handleSaveDisciplina" :loading="disciplinasStore.loading" :disabled="disciplinasStore.loading">
+            <v-btn
+              color="grey"
+              variant="text"
+              @click="dialogDisciplina = false"
+              :disabled="disciplinasStore.loading"
+              >Cancelar</v-btn
+            >
+            <v-btn
+              color="primary"
+              @click="handleSaveDisciplina"
+              :loading="disciplinasStore.loading"
+              :disabled="disciplinasStore.loading"
+            >
               {{ isEditingDisciplina ? 'Salvar Alterações' : 'Cadastrar' }}
             </v-btn>
           </v-card-actions>
@@ -256,8 +310,19 @@
             </v-form>
           </v-card-text>
           <v-card-actions class="justify-end pa-4 bg-blue-grey-lighten-5">
-            <v-btn color="grey" variant="text" @click="dialogAvaliacao = false" :disabled="disciplinasStore.loading">Cancelar</v-btn>
-            <v-btn color="success" @click="handleSaveAvaliacao" :loading="disciplinasStore.loading" :disabled="disciplinasStore.loading">
+            <v-btn
+              color="grey"
+              variant="text"
+              @click="dialogAvaliacao = false"
+              :disabled="disciplinasStore.loading"
+              >Cancelar</v-btn
+            >
+            <v-btn
+              color="success"
+              @click="handleSaveAvaliacao"
+              :loading="disciplinasStore.loading"
+              :disabled="disciplinasStore.loading"
+            >
               {{ isEditingAvaliacao ? 'Salvar Alterações' : 'Adicionar' }}
             </v-btn>
           </v-card-actions>
@@ -302,8 +367,19 @@
             </v-form>
           </v-card-text>
           <v-card-actions class="justify-end pa-4 bg-blue-grey-lighten-5">
-            <v-btn color="grey" variant="text" @click="dialogFalta = false" :disabled="disciplinasStore.loading">Cancelar</v-btn>
-            <v-btn color="warning" @click="handleSaveFalta" :loading="disciplinasStore.loading" :disabled="disciplinasStore.loading">
+            <v-btn
+              color="grey"
+              variant="text"
+              @click="dialogFalta = false"
+              :disabled="disciplinasStore.loading"
+              >Cancelar</v-btn
+            >
+            <v-btn
+              color="warning"
+              @click="handleSaveFalta"
+              :loading="disciplinasStore.loading"
+              :disabled="disciplinasStore.loading"
+            >
               {{ isEditingFalta ? 'Salvar Alterações' : 'Registrar' }}
             </v-btn>
           </v-card-actions>
@@ -317,8 +393,20 @@
             Tem certeza que deseja excluir este item? Esta ação não pode ser desfeita.
           </v-card-text>
           <v-card-actions class="justify-end pa-4 bg-blue-grey-lighten-5">
-            <v-btn color="grey" variant="text" @click="deleteItemDialog = false" :disabled="disciplinasStore.loading">Cancelar</v-btn>
-            <v-btn color="error" @click="confirmDeleteAction" :loading="disciplinasStore.loading" :disabled="disciplinasStore.loading">Excluir</v-btn>
+            <v-btn
+              color="grey"
+              variant="text"
+              @click="deleteItemDialog = false"
+              :disabled="disciplinasStore.loading"
+              >Cancelar</v-btn
+            >
+            <v-btn
+              color="error"
+              @click="confirmDeleteAction"
+              :loading="disciplinasStore.loading"
+              :disabled="disciplinasStore.loading"
+              >Excluir</v-btn
+            >
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -331,10 +419,23 @@
       </v-snackbar>
     </v-container>
     <v-container v-else class="text-center pt-8">
-      <v-progress-circular indeterminate color="primary" size="64" v-if="disciplinasStore.loading"></v-progress-circular>
-      <v-alert v-else-if="disciplinasStore.error" type="error" dense variant="tonal" icon="mdi-alert-circle-outline">
+      <v-progress-circular
+        indeterminate
+        color="primary"
+        size="64"
+        v-if="disciplinasStore.loading"
+      ></v-progress-circular>
+      <v-alert
+        v-else-if="disciplinasStore.error"
+        type="error"
+        dense
+        variant="tonal"
+        icon="mdi-alert-circle-outline"
+      >
         Erro ao carregar disciplina: {{ disciplinasStore.error }}
-        <v-btn text class="ml-2" @click="disciplinasStore.fetchDisciplinas()">Tentar Novamente</v-btn>
+        <v-btn text class="ml-2" @click="disciplinasStore.fetchDisciplinas()"
+          >Tentar Novamente</v-btn
+        >
       </v-alert>
       <v-alert v-else type="info" variant="outlined" icon="mdi-information-outline">
         Disciplina não encontrada ou não carregada.
@@ -344,243 +445,371 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
-import { useAuthStore } from '../stores/auth';
-import { useDisciplinasStore } from '../stores/disciplinas';
-import NotasChart from '../components/NotasChart.vue'; // Importa o componente do gráfico
+import { ref, computed, onMounted, watch } from 'vue' // Importa funcionalidades reativas do Vue (ref, computed, onMounted, watch).
+import { useRoute } from 'vue-router' // Importa o hook `useRoute` para acessar informações da rota atual.
+import { useAuthStore } from '../stores/auth' // Importa a store Pinia `useAuthStore` para gerenciar a autenticação.
+import { useDisciplinasStore } from '../stores/disciplinas' // Importa a store Pinia `useDisciplinasStore` para gerenciar os dados das disciplinas.
+import NotasChart from '../components/NotasChart.vue' // Importa o componente de gráfico `NotasChart`.
 
-const route = useRoute();
-const authStore = useAuthStore();
-const disciplinasStore = useDisciplinasStore();
+// Instanciação dos hooks e stores.
+const route = useRoute() // Obtém o objeto de rota para acessar parâmetros (como o ID da disciplina).
+const authStore = useAuthStore() // Obtém uma instância da store de autenticação.
+const disciplinasStore = useDisciplinasStore() // Obtém uma instância da store de disciplinas.
 
-// Estado para a disciplina atual
-const disciplinaId = ref(route.params.id);
-const disciplina = computed(() => disciplinasStore.getDisciplinaById(disciplinaId.value));
+// --- Estados Reativos (ref) e Propriedades Computadas (computed) ---
 
-// Estados para os diálogos de cadastro/edição
-const dialogDisciplina = ref(false);
-const isEditingDisciplina = ref(false);
-const currentDisciplina = ref({ id: null, nome: '', professor: '', cargaHoraria: null, semestre: '' });
-const formErrorDisciplina = ref(null);
+// `disciplinaId`: Uma referência reativa que armazena o ID da disciplina obtido dos parâmetros da URL.
+const disciplinaId = ref(route.params.id)
+// `disciplina`: Uma propriedade computada que busca a disciplina correspondente na `disciplinasStore`
+// Sempre que `disciplinaId.value` mudar, esta propriedade será reavaliada.
+const disciplina = computed(() => disciplinasStore.getDisciplinaById(disciplinaId.value))
 
-const dialogAvaliacao = ref(false);
-const isEditingAvaliacao = ref(false);
-const currentAvaliacao = ref({ id: null, nome: '', nota: null, peso: null });
-const formErrorAvaliacao = ref(null);
+// Variáveis de estado para controlar a visibilidade e o comportamento do diálogo de Disciplina.
+const dialogDisciplina = ref(false) // `true` para mostrar o diálogo, `false` para escondê-lo.
+const isEditingDisciplina = ref(false) // `true` se estiver editando uma disciplina existente, `false` para uma nova.
+const currentDisciplina = ref({
+  id: null,
+  nome: '',
+  professor: '',
+  cargaHoraria: null,
+  semestre: '',
+}) // Objeto reativo para os dados do formulário de disciplina.
+const formErrorDisciplina = ref(null) // Mensagem de erro específica para o formulário da disciplina.
 
-const dialogFalta = ref(false);
-const isEditingFalta = ref(false);
-const currentFalta = ref({ id: null, data: '', quantidade: null });
-const formErrorFalta = ref(null);
+// Variáveis de estado para o diálogo de Avaliação (similar ao de Disciplina).
+const dialogAvaliacao = ref(false)
+const isEditingAvaliacao = ref(false)
+const currentAvaliacao = ref({ id: null, nome: '', nota: null, peso: null })
+const formErrorAvaliacao = ref(null)
 
-// Estado para o diálogo de confirmação de exclusão (genérico)
-const deleteItemDialog = ref(false);
-const itemToDelete = ref(null); // O item (avaliação ou falta) a ser excluído
-const itemToDeleteType = ref(null); // 'avaliacao' ou 'falta'
+// Variáveis de estado para o diálogo de Falta (similar aos anteriores).
+const dialogFalta = ref(false)
+const isEditingFalta = ref(false)
+const currentFalta = ref({ id: null, data: '', quantidade: null })
+const formErrorFalta = ref(null)
 
+// Variáveis de estado para o diálogo de confirmação de exclusão genérico.
+const deleteItemDialog = ref(false) // Controla a visibilidade do diálogo de confirmação.
+const itemToDelete = ref(null) // Armazena o objeto (avaliação ou falta) a ser excluído.
+const itemToDeleteType = ref(null) // Indica o tipo do item a ser excluído ('avaliacao' ou 'falta') para direcionar a ação correta.
+
+// Variável de estado para o `v-snackbar` (mensagens de feedback).
 const snackbar = ref({
-  show: false,
-  text: '',
-  color: '',
-  timeout: 3000,
-});
+  show: false, // Controla a visibilidade do snackbar.
+  text: '', // Texto da mensagem.
+  color: '', // Cor do snackbar (ex: 'success', 'error', 'warning').
+  timeout: 3000, // Tempo em milissegundos para o snackbar desaparecer.
+})
 
-// Regras de validação
+// --- Regras de Validação para Formulários ---
+// Objeto que contém funções de validação reutilizáveis para os campos dos formulários.
 const rules = {
-  required: value => !!value || 'Campo obrigatório.',
-  positiveNumber: value => (value > 0) || 'Deve ser um número positivo.',
-  notaRange: value => (value >= 0 && value <= 10) || 'A nota deve estar entre 0 e 10.',
-  pesoRange: value => (value >= 0 && value <= 1) || 'O peso deve estar entre 0 e 1.',
-};
+  required: (value) => !!value || 'Campo obrigatório.', // Verifica se o valor não é nulo ou vazio.
+  positiveNumber: (value) => value > 0 || 'Deve ser um número positivo.', // Verifica se o valor é um número maior que zero.
+  notaRange: (value) => (value >= 0 && value <= 10) || 'A nota deve estar entre 0 e 10.', // Verifica se a nota está entre 0 e 10.
+  pesoRange: (value) => (value >= 0 && value <= 1) || 'O peso deve estar entre 0 e 1.', // Verifica se o peso está entre 0 e 1.
+}
 
-// Computed properties para os cálculos e status
-const mediaFinal = computed(() => disciplinasStore.calcularMediaFinal(disciplinaId.value));
-const totalFaltas = computed(() => disciplinasStore.calcularTotalFaltas(disciplinaId.value));
-const maxFaltasPermitidas = computed(() => (disciplina.value?.cargaHoraria || 0) * 0.25);
-const statusAprovacao = computed(() => disciplinasStore.getStatusAprovacao(disciplinaId.value));
+// --- Propriedades Computadas para Cálculos e Status Acadêmicos ---
 
-// Cores baseadas no status
+// `mediaFinal`: Calcula a média final da disciplina usando a função `calcularMediaFinal` da `disciplinasStore`.
+const mediaFinal = computed(() => disciplinasStore.calcularMediaFinal(disciplinaId.value))
+// `totalFaltas`: Calcula o total de faltas da disciplina usando a função `calcularTotalFaltas` da `disciplinasStore`.
+const totalFaltas = computed(() => disciplinasStore.calcularTotalFaltas(disciplinaId.value))
+// `maxFaltasPermitidas`: Calcula o número máximo de faltas permitido (25% da carga horária da disciplina).
+const maxFaltasPermitidas = computed(() => (disciplina.value?.cargaHoraria || 0) * 0.25)
+// `statusAprovacao`: Determina o status de aprovação da disciplina usando a função `getStatusAprovacao` da `disciplinasStore`.
+const statusAprovacao = computed(() => disciplinasStore.getStatusAprovacao(disciplinaId.value))
+
+// Propriedade computada para definir a cor da `mediaFinal` com base no seu valor.
 const mediaColor = computed(() => {
-  const media = parseFloat(mediaFinal.value);
-  if (media >= 7) return 'success';
-  if (media >= 5) return 'warning';
-  if (media < 5) return 'error';
-  return 'grey';
-});
+  const media = parseFloat(mediaFinal.value)
+  if (media >= 7) return 'success' // Verde para média 7 ou mais.
+  if (media >= 5) return 'warning' // Amarelo para média entre 5 e 6.9.
+  if (media < 5) return 'error' // Vermelho para média menor que 5.
+  return 'grey' // Cor padrão.
+})
 
+// Propriedade computada para definir a cor do `statusAprovacao`.
 const statusColor = computed(() => {
-  const status = statusAprovacao.value;
-  if (status === 'Aprovado') return 'success';
-  if (status === 'Recuperação') return 'warning';
-  if (status.includes('Reprovado')) return 'error';
-  return 'grey';
-});
+  const status = statusAprovacao.value
+  if (status === 'Aprovado') return 'success' // Verde para aprovado.
+  if (status === 'Recuperação') return 'warning' // Amarelo para recuperação.
+  if (status.includes('Reprovado')) return 'error' // Vermelho para reprovado.
+  return 'grey' // Cor padrão.
+})
 
-// Watcher para mudanças no ID da rota (se o usuário navegar entre detalhes de disciplinas)
-watch(() => route.params.id, (newId) => {
-  disciplinaId.value = newId;
-  // O computed property `disciplina` reagirá automaticamente a essa mudança
-});
+// --- Ciclo de Vida do Componente e Observadores (watch) ---
 
+// `watch`: Observa mudanças no `id` dos parâmetros da rota.
+// Isso é útil se o usuário navegar entre diferentes detalhes de disciplinas sem recarregar a página.
+watch(
+  () => route.params.id,
+  (newId) => {
+    disciplinaId.value = newId // Atualiza o `disciplinaId`, o que automaticamente reage a propriedade computada `disciplina`.
+  },
+)
+
+// `onMounted`: Hook de ciclo de vida que é executado uma vez que o componente é montado no DOM.
 onMounted(() => {
-  // O `fetchDisciplinas` é chamado no DisciplinasView, aqui apenas garantimos que está no store
-  // se o usuário acessar diretamente por URL.
+  // Verifica se a disciplina já está presente na store. Se não estiver, tenta carregá-la.
+  // Isso garante que os dados estejam disponíveis mesmo se o usuário acessar a URL diretamente.
   if (!disciplina.value) {
-    disciplinasStore.fetchDisciplinas();
+    disciplinasStore.fetchDisciplinas()
   }
-});
+})
 
-// --- Métodos para Disciplinas (edição via diálogo) ---
+// --- Métodos para Manipulação de Disciplinas (edição via diálogo) ---
+
+// `openEditDialog`: Função para abrir o diálogo de edição da disciplina.
 const openEditDialog = (disc) => {
-  isEditingDisciplina.value = true;
-  currentDisciplina.value = { ...disc };
-  formErrorDisciplina.value = null;
-  dialogDisciplina.value = true;
-};
+  isEditingDisciplina.value = true // Define o modo de edição como verdadeiro.
+  currentDisciplina.value = { ...disc } // Copia os dados da disciplina para o formulário de edição.
+  formErrorDisciplina.value = null // Limpa qualquer mensagem de erro anterior.
+  dialogDisciplina.value = true // Abre o diálogo.
+}
 
+// `handleSaveDisciplina`: Função assíncrona para salvar as alterações de uma disciplina.
 const handleSaveDisciplina = async () => {
-  formErrorDisciplina.value = null;
-  // Validação simples do formulário de disciplina
-  if (!currentDisciplina.value.nome || !currentDisciplina.value.professor || !currentDisciplina.value.cargaHoraria || !currentDisciplina.value.semestre) {
-    formErrorDisciplina.value = 'Por favor, preencha todos os campos obrigatórios.';
-    return;
+  formErrorDisciplina.value = null // Limpa erros de formulário.
+  // Validações básicas do formulário antes de tentar salvar.
+  if (
+    !currentDisciplina.value.nome ||
+    !currentDisciplina.value.professor ||
+    !currentDisciplina.value.cargaHoraria ||
+    !currentDisciplina.value.semestre
+  ) {
+    formErrorDisciplina.value = 'Por favor, preencha todos os campos obrigatórios.'
+    return
   }
   if (currentDisciplina.value.cargaHoraria <= 0) {
-    formErrorDisciplina.value = 'A carga horária deve ser um número positivo.';
-    return;
+    formErrorDisciplina.value = 'A carga horária deve ser um número positivo.'
+    return
   }
 
   try {
-    await disciplinasStore.updateDisciplina(currentDisciplina.value.id, currentDisciplina.value);
-    snackbar.value = { show: true, text: 'Disciplina atualizada com sucesso!', color: 'success', timeout: 3000 };
-    dialogDisciplina.value = false;
+    // Chama a ação `updateDisciplina` da store para persistir as alterações.
+    await disciplinasStore.updateDisciplina(currentDisciplina.value.id, currentDisciplina.value)
+    // Exibe uma mensagem de sucesso no snackbar.
+    snackbar.value = {
+      show: true,
+      text: 'Disciplina atualizada com sucesso!',
+      color: 'success',
+      timeout: 3000,
+    }
+    dialogDisciplina.value = false // Fecha o diálogo após o sucesso.
   } catch (err) {
-    formErrorDisciplina.value = err.message || 'Erro ao atualizar disciplina.';
-    snackbar.value = { show: true, text: `Erro: ${formErrorDisciplina.value}`, color: 'error', timeout: 5000 };
+    // Em caso de erro, exibe a mensagem de erro no formulário e no snackbar.
+    formErrorDisciplina.value = err.message || 'Erro ao atualizar disciplina.'
+    snackbar.value = {
+      show: true,
+      text: `Erro: ${formErrorDisciplina.value}`,
+      color: 'error',
+      timeout: 5000,
+    }
   }
-};
+}
 
 // --- Métodos para Avaliações ---
+
+// `openAddAvaliacaoDialog`: Abre o diálogo para adicionar uma nova avaliação.
 const openAddAvaliacaoDialog = () => {
-  isEditingAvaliacao.value = false;
-  currentAvaliacao.value = { nome: '', nota: null, peso: null };
-  formErrorAvaliacao.value = null;
-  dialogAvaliacao.value = true;
-};
+  isEditingAvaliacao.value = false // Define o modo como adição.
+  currentAvaliacao.value = { nome: '', nota: null, peso: null } // Reseta o formulário.
+  formErrorAvaliacao.value = null // Limpa erros.
+  dialogAvaliacao.value = true // Abre o diálogo.
+}
 
+// `openEditAvaliacaoDialog`: Abre o diálogo para editar uma avaliação existente.
 const openEditAvaliacaoDialog = (avaliacao) => {
-  isEditingAvaliacao.value = true;
-  currentAvaliacao.value = { ...avaliacao };
-  formErrorAvaliacao.value = null;
-  dialogAvaliacao.value = true;
-};
+  isEditingAvaliacao.value = true // Define o modo como edição.
+  currentAvaliacao.value = { ...avaliacao } // Preenche o formulário com os dados da avaliação.
+  formErrorAvaliacao.value = null
+  dialogAvaliacao.value = true
+}
 
+// `handleSaveAvaliacao`: Salva (adiciona ou atualiza) uma avaliação.
 const handleSaveAvaliacao = async () => {
-  formErrorAvaliacao.value = null;
-  if (!currentAvaliacao.value.nome || currentAvaliacao.value.nota === null || currentAvaliacao.value.peso === null) {
-    formErrorAvaliacao.value = 'Preencha todos os campos.';
-    return;
+  formErrorAvaliacao.value = null
+  // Validações dos campos da avaliação.
+  if (
+    !currentAvaliacao.value.nome ||
+    currentAvaliacao.value.nota === null ||
+    currentAvaliacao.value.peso === null
+  ) {
+    formErrorAvaliacao.value = 'Preencha todos os campos.'
+    return
   }
   if (currentAvaliacao.value.nota < 0 || currentAvaliacao.value.nota > 10) {
-    formErrorAvaliacao.value = 'A nota deve estar entre 0 e 10.';
-    return;
+    formErrorAvaliacao.value = 'A nota deve estar entre 0 e 10.'
+    return
   }
   if (currentAvaliacao.value.peso < 0 || currentAvaliacao.value.peso > 1) {
-    formErrorAvaliacao.value = 'O peso deve estar entre 0 e 1.';
-    return;
+    formErrorAvaliacao.value = 'O peso deve estar entre 0 e 1.'
+    return
   }
 
   try {
     if (isEditingAvaliacao.value) {
-      await disciplinasStore.updateAvaliacao(disciplinaId.value, currentAvaliacao.value.id, currentAvaliacao.value);
-      snackbar.value = { show: true, text: 'Avaliação atualizada com sucesso!', color: 'success', timeout: 3000 };
+      // Se estiver editando, chama `updateAvaliacao` na store.
+      await disciplinasStore.updateAvaliacao(
+        disciplinaId.value,
+        currentAvaliacao.value.id,
+        currentAvaliacao.value,
+      )
+      snackbar.value = {
+        show: true,
+        text: 'Avaliação atualizada com sucesso!',
+        color: 'success',
+        timeout: 3000,
+      }
     } else {
-      await disciplinasStore.addAvaliacao(disciplinaId.value, currentAvaliacao.value);
-      snackbar.value = { show: true, text: 'Avaliação adicionada com sucesso!', color: 'success', timeout: 3000 };
+      // Se estiver adicionando, chama `addAvaliacao` na store.
+      await disciplinasStore.addAvaliacao(disciplinaId.value, currentAvaliacao.value)
+      snackbar.value = {
+        show: true,
+        text: 'Avaliação adicionada com sucesso!',
+        color: 'success',
+        timeout: 3000,
+      }
     }
-    dialogAvaliacao.value = false;
+    dialogAvaliacao.value = false
   } catch (err) {
-    formErrorAvaliacao.value = err.message || 'Erro ao salvar avaliação.';
-    snackbar.value = { show: true, text: `Erro: ${formErrorAvaliacao.value}`, color: 'error', timeout: 5000 };
+    formErrorAvaliacao.value = err.message || 'Erro ao salvar avaliação.'
+    snackbar.value = {
+      show: true,
+      text: `Erro: ${formErrorAvaliacao.value}`,
+      color: 'error',
+      timeout: 5000,
+    }
   }
-};
+}
 
+// `confirmDeleteAvaliacao`: Abre o diálogo de confirmação para exclusão de uma avaliação.
 const confirmDeleteAvaliacao = (avaliacao) => {
-  itemToDelete.value = avaliacao;
-  itemToDeleteType.value = 'avaliacao';
-  deleteItemDialog.value = true;
-};
+  itemToDelete.value = avaliacao // Define a avaliação a ser excluída.
+  itemToDeleteType.value = 'avaliacao' // Indica o tipo do item.
+  deleteItemDialog.value = true // Abre o diálogo de confirmação.
+}
 
 // --- Métodos para Faltas ---
+
+// `openAddFaltaDialog`: Abre o diálogo para registrar uma nova falta.
 const openAddFaltaDialog = () => {
-  isEditingFalta.value = false;
-  currentFalta.value = { data: '', quantidade: null };
-  formErrorFalta.value = null;
-  dialogFalta.value = true;
-};
+  isEditingFalta.value = false // Define o modo como registro.
+  currentFalta.value = { data: '', quantidade: null } // Reseta o formulário.
+  formErrorFalta.value = null
+  dialogFalta.value = true
+}
 
+// `openEditFaltaDialog`: Abre o diálogo para editar uma falta existente.
 const openEditFaltaDialog = (falta) => {
-  isEditingFalta.value = true;
-  currentFalta.value = { ...falta };
-  formErrorFalta.value = null;
-  dialogFalta.value = true;
-};
+  isEditingFalta.value = true // Define o modo como edição.
+  currentFalta.value = { ...falta } // Preenche o formulário com os dados da falta.
+  formErrorFalta.value = null
+  dialogFalta.value = true
+}
 
+// `handleSaveFalta`: Salva (registra ou atualiza) uma falta.
 const handleSaveFalta = async () => {
-  formErrorFalta.value = null;
+  formErrorFalta.value = null
+  // Validações dos campos da falta.
   if (!currentFalta.value.data || currentFalta.value.quantidade === null) {
-    formErrorFalta.value = 'Preencha todos os campos.';
-    return;
+    formErrorFalta.value = 'Preencha todos os campos.'
+    return
   }
   if (currentFalta.value.quantidade <= 0) {
-    formErrorFalta.value = 'A quantidade de aulas perdidas deve ser um número positivo.';
-    return;
+    formErrorFalta.value = 'A quantidade de aulas perdidas deve ser um número positivo.'
+    return
   }
 
   try {
     if (isEditingFalta.value) {
-      await disciplinasStore.updateFalta(disciplinaId.value, currentFalta.value.id, currentFalta.value);
-      snackbar.value = { show: true, text: 'Falta atualizada com sucesso!', color: 'success', timeout: 3000 };
+      // Se estiver editando, chama `updateFalta` na store.
+      await disciplinasStore.updateFalta(
+        disciplinaId.value,
+        currentFalta.value.id,
+        currentFalta.value,
+      )
+      snackbar.value = {
+        show: true,
+        text: 'Falta atualizada com sucesso!',
+        color: 'success',
+        timeout: 3000,
+      }
     } else {
-      await disciplinasStore.addFalta(disciplinaId.value, currentFalta.value);
-      snackbar.value = { show: true, text: 'Falta registrada com sucesso!', color: 'success', timeout: 3000 };
+      // Se estiver registrando, chama `addFalta` na store.
+      await disciplinasStore.addFalta(disciplinaId.value, currentFalta.value)
+      snackbar.value = {
+        show: true,
+        text: 'Falta registrada com sucesso!',
+        color: 'success',
+        timeout: 3000,
+      }
     }
-    dialogFalta.value = false;
+    dialogFalta.value = false
   } catch (err) {
-    formErrorFalta.value = err.message || 'Erro ao registrar falta.';
-    snackbar.value = { show: true, text: `Erro: ${formErrorFalta.value}`, color: 'error', timeout: 5000 };
+    formErrorFalta.value = err.message || 'Erro ao registrar falta.'
+    snackbar.value = {
+      show: true,
+      text: `Erro: ${formErrorFalta.value}`,
+      color: 'error',
+      timeout: 5000,
+    }
   }
-};
+}
 
+// `confirmDeleteFalta`: Abre o diálogo de confirmação para exclusão de uma falta.
 const confirmDeleteFalta = (falta) => {
-  itemToDelete.value = falta;
-  itemToDeleteType.value = 'falta';
-  deleteItemDialog.value = true;
-};
+  itemToDelete.value = falta
+  itemToDeleteType.value = 'falta'
+  deleteItemDialog.value = true
+}
 
 // --- Função para Confirmação de Exclusão Genérica ---
+// `confirmDeleteAction`: É chamada quando o usuário confirma a exclusão no diálogo.
+// Ela verifica o `itemToDeleteType` para saber se deve excluir uma avaliação ou uma falta.
 const confirmDeleteAction = async () => {
   try {
     if (itemToDeleteType.value === 'avaliacao') {
-      await disciplinasStore.deleteAvaliacao(disciplinaId.value, itemToDelete.value.id);
-      snackbar.value = { show: true, text: 'Avaliação excluída com sucesso!', color: 'success', timeout: 3000 };
+      // Chama a ação `deleteAvaliacao` da store para remover a avaliação.
+      await disciplinasStore.deleteAvaliacao(disciplinaId.value, itemToDelete.value.id)
+      snackbar.value = {
+        show: true,
+        text: 'Avaliação excluída com sucesso!',
+        color: 'success',
+        timeout: 3000,
+      }
     } else if (itemToDeleteType.value === 'falta') {
-      await disciplinasStore.deleteFalta(disciplinaId.value, itemToDelete.value.id);
-      snackbar.value = { show: true, text: 'Falta excluída com sucesso!', color: 'success', timeout: 3000 };
+      // Chama a ação `deleteFalta` da store para remover a falta.
+      await disciplinasStore.deleteFalta(disciplinaId.value, itemToDelete.value.id)
+      snackbar.value = {
+        show: true,
+        text: 'Falta excluída com sucesso!',
+        color: 'success',
+        timeout: 3000,
+      }
     }
-    deleteItemDialog.value = false;
-    itemToDelete.value = null;
-    itemToDeleteType.value = null;
+    deleteItemDialog.value = false // Fecha o diálogo de confirmação.
+    itemToDelete.value = null // Reseta o item a ser excluído.
+    itemToDeleteType.value = null // Reseta o tipo.
   } catch (err) {
-    snackbar.value = { show: true, text: `Erro ao excluir: ${err.message}`, color: 'error', timeout: 5000 };
+    snackbar.value = {
+      show: true,
+      text: `Erro ao excluir: ${err.message}`,
+      color: 'error',
+      timeout: 5000,
+    }
   }
-};
+}
 </script>
 
 <style scoped>
+/* Estilos específicos para este componente. */
 .detail-disciplina-bg {
+  /* Define um gradiente de cor suave como fundo da página, do verde claro ao verde mais claro. */
   background: linear-gradient(135deg, #e8f5e9, #dcedc8); /* Gradiente de verde menta suave */
-  min-height: 100vh;
+  min-height: 100vh; /* Garante que o fundo ocupe toda a altura visível da viewport. */
 }
 </style>
+```
