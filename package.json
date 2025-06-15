@@ -1,0 +1,20 @@
+{
+  "name": "controle-de-notas",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.9",
+    "firebase": "^11.9.1",
+    "vue": "^3.4.15",
+    "vue-chartjs": "^5.3.2"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0",
+    "@vitejs/plugin-vue": "^5.2.3"
+  }
+}
