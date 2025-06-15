@@ -7,7 +7,7 @@
 - João Vitor Theodoro de Souza  
 - Larissa Smaniotto Araujo  
 - Leonardo Palin dos Santos  
-
+- Janaina Lima Viana
 ---
 
 ## Descrição do Sistema
